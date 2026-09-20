@@ -1,3 +1,4 @@
+
 name: Chat ID Bul
 
 on:
@@ -8,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Repoyu indir
+        uses: actions/checkout@v4
+
       - name: Python kurulumu
         uses: actions/setup-python@v5
         with:
