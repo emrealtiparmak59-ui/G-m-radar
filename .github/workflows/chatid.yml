@@ -1,0 +1,22 @@
+name: Chat ID Bul
+
+on:
+  workflow_dispatch:
+
+jobs:
+  get-chat-id:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Python kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Gerekli paket
+        run: pip install requests
+
+      - name: Chat ID'yi bul
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python get_chat_id.py
